@@ -8,3 +8,4 @@ const apiKey = process.env.REACT_APP_API_KEY;
 const popular_movies = `MostPopularMovies/${apiKey}`
 
 export const popularMoviesURL = () => `${base_url}${popular_movies}`
+
