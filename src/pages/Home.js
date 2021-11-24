@@ -34,7 +34,7 @@ const Home = () => {
     console.log(popularTvShows)
 
     return(
-        <>
+        <MovieList>
             <h2>Popular Movies - Top 20</h2>
             <Movies>
                 {popularMovies.map((item) => (
@@ -62,11 +62,19 @@ const Home = () => {
                     )    
                 )}
             </Movies>
-        </>
+        </MovieList>
     )
 }
 
+const MovieList = styled.div`
+    padding: 0 5rem;
+    h2{
+        padding: 3rem 0;
+    }
+`
+
 const Movies = styled.div`
+ min-height: 80vh;
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-column-gap: 2rem;

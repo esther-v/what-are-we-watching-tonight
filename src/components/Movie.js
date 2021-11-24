@@ -11,12 +11,28 @@ const Movie = ({title,image,released}) => {
 }
 
 const StyledMovie = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 1rem;
-    /* img{
-        width: 100%;
-        height: 100px;
-        object-fit:cover
-    } */
+    color: #c7ecee;
+    background-color: #30336b;
+    padding-bottom: 10px;
+    cursor: pointer;
+    box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+                inset -6px -6px 10px 0 rgba(83, 92, 104,0.5);
+    &:hover{
+        box-shadow: -8px -8px 12px 0 rgba(0, 0, 0, 0.3),
+                12px 12px 16px rgba(83, 92, 104,0.25);
+    }
+    img{
+        width: 80%;
+        height: 254px;
+        object-fit: cover;
+    }
+    h3{
+        text-align:center;
+    }
 `
 
 export default Movie
