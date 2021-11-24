@@ -10,4 +10,6 @@ const popular_tvshows = `MostPopularTVs/${apiKey}`
 
 export const popularMoviesURL = () => `${base_url}${popular_movies}`
 export const popularTvshowsURL = () => `${base_url}${popular_tvshows}`
+//Movie details
+export const movieDetailsURL = (movie_id) => `${base_url}Title/${apiKey}/${movie_id}`
  
