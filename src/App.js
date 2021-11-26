@@ -1,5 +1,6 @@
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 import GlobalStyles from "./components/GlobalStyles";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
       <GlobalStyles/>
       <Nav/>
       {/* <Home/> */}
-      <h2>Popular Movies - <span>Top 20</span></h2>
+      <Footer/>
     </div>
   );
 }

@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Roboto Condensed', sans-serif;
         background: #dff9fb;
     }
+    
 `
 
 export default GlobalStyles

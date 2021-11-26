@@ -14,6 +14,7 @@ const StyledMovie = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     border-radius: 1rem;
     color: #c7ecee;
     background-color: #30336b;
@@ -33,6 +34,11 @@ const StyledMovie = styled.div`
     }
     h3{
         text-align:center;
+        margin: 5px 0;
+    }
+    p{
+        font-family: 'Raleway', sans-serif;
+        color: white;
     }
 `
 

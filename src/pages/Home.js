@@ -35,7 +35,7 @@ const Home = () => {
 
     return(
         <MovieList>
-            <h2>Popular Movies - <span>Top 20</span></h2>
+            <h2>Popular Movies <span>Top 20</span></h2>
             <Movies>
                 {popularMovies.map((item) => (
                     <Movie
@@ -49,7 +49,7 @@ const Home = () => {
                 )}
             </Movies>
 
-            <h2>Popular TV Shows - <span>Top 20</span></h2>
+            <h2>Popular TV Shows <span>Top 20</span></h2>
             <Movies>
                 {popularTvShows.map(item => (
                     <Movie
@@ -70,6 +70,14 @@ const MovieList = styled.div`
     padding: 0 5rem;
     h2{
         padding: 3rem 0;
+        font-family: 'Raleway', sans-serif;
+        font-size: 32px;
+        span{
+            font-style:normal;
+            color: #30336b;
+            margin-left: 15px;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
     }
 `
 
@@ -79,6 +87,7 @@ const Movies = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-column-gap: 2rem;
     grid-row-gap: 4rem;
+    margin-bottom: 50px;
 `
 
 export default Home
