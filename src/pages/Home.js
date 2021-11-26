@@ -22,7 +22,7 @@ const Home = () => {
             return false
         }
     })
-    console.log(popularMovies)
+    
     //filter the 20 first Tv shows
     const popularTvShows = popularTv.filter((show) => {
         if(show.rank < 21) {
@@ -31,7 +31,7 @@ const Home = () => {
             return false
         }
     })
-    console.log(popularTvShows)
+    
 
     return(
         <MovieList>

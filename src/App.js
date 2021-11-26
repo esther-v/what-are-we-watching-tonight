@@ -1,12 +1,14 @@
 import Home from "./pages/Home";
+import Nav from "./components/Nav";
 import GlobalStyles from "./components/GlobalStyles";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyles/>
-      <h1>What are we watching tonight</h1>
-      <Home/>
+      <Nav/>
+      {/* <Home/> */}
+      <h2>Popular Movies - <span>Top 20</span></h2>
     </div>
   );
 }

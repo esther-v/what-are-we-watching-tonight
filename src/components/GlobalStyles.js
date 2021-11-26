@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
         font-family: 'Roboto Condensed', sans-serif;
+        background: #dff9fb;
     }
 `
 
