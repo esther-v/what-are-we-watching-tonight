@@ -1,18 +1,31 @@
 import styled from "styled-components"
+import { loadDetail } from "../actions/detailAction"
+import { useDispatch } from "react-redux"
+import { Link } from "react-router-dom"
 
 const Movie = ({title,image,released,id}) => {
 
-    
+    //load details
+    const dispatch = useDispatch()
+    const loadDetailHandler = () => {
+        document.body.style.overflow = 'hidden'
+        dispatch(loadDetail(id))
+    }
+
     return(
-        <StyledMovie>
-            <img src={image} alt={title}/>
-            <h3>{title}</h3>
-            <p>{released}</p>
+        <StyledMovie onClick={loadDetailHandler}>
+            <Link to={`/movie/${id}`}>
+                <img src={image} alt={title}/>
+                
+                <h3>{title}</h3>
+                <p>{released}</p>
+            </Link>
         </StyledMovie>
     )
 }
 
 const StyledMovie = styled.div`
+    appearance: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,11 +50,15 @@ const StyledMovie = styled.div`
     h3{
         text-align:center;
         margin: 5px 0;
+        color: white;
+        text-decoration: none;
     }
     p{
         font-family: 'Raleway', sans-serif;
         color: white;
+        text-decoration: none;
     }
+    
 `
 
 export default Movie
