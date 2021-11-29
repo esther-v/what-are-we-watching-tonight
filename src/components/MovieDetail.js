@@ -46,17 +46,22 @@ const CardShadow = styled.div`
 
 const Detail = styled.div`
     width: 80%;
+    margin: 0 auto;
     border-radius: 1rem;
     padding: 2rem 5rem;
     background: white;
     position: absolute;
     left: 10%;
+    top: 10%;
+    /* min-height: 100vh; */
     .presentation{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+        margin-bottom: 20px;
         img{
             width: 20%;
+            margin-left: 50px;
         }
     }
     p{
@@ -64,6 +69,16 @@ const Detail = styled.div`
     }
     h3, h4{
         font-family: 'Raleway', sans-serif;
+        color: #30336b;
+    }
+    h1{
+        font-size: 45px;
+        font-weight: 600;
+    }
+    h4{
+        text-align: center;
+        margin-top: 20px;
+        font-size: 25px;
     }
 `
 
