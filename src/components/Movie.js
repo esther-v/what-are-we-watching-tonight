@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
-const Movie = ({title,image,released}) => {
+const Movie = ({title,image,released,id}) => {
+
+    
     return(
         <StyledMovie>
             <img src={image} alt={title}/>

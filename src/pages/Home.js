@@ -1,13 +1,20 @@
 import React, {useEffect} from 'react'
 import Movie from '../components/Movie'
+import MovieDetail from '../components/MovieDetail'
 //redux
 import {useDispatch, useSelector} from 'react-redux'
 import {loadMovies} from "../actions/moviesActions"
 import styled from 'styled-components'
+import { useLocation } from 'react-router-dom'
 
 
 
 const Home = () => {
+    //get current location
+    const location = useLocation()
+    console.log(location)
+    const pathId = location.pathname.split("/")[2]
+
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(loadMovies())
@@ -35,6 +42,9 @@ const Home = () => {
 
     return(
         <MovieList>
+
+            {pathId && <MovieDetail/>}
+
             <h2>Popular Movies <span>Top 20</span></h2>
             <Movies>
                 {popularMovies.map((item) => (

@@ -1,4 +1,4 @@
-const initialState = {movie: {stars:[]}, isLoading: true}
+const initialState = {movie: {actorList:[]}, isLoading: true}
 
 const detailReducer = (state=initialState, action) => {
     switch(action.type){
