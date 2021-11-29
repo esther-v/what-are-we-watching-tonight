@@ -1,34 +1,44 @@
 import styled from "styled-components"
 import { useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
 
 const MovieDetail = () => {
+
+    const history = useHistory()
+    //exit detail
+    const exitDetailHandler = (e) => {
+        const element = e.target
+        if(element.classList.contains('shadow')){
+            document.body.style.overflow = 'auto'
+            history.push('/')
+        }
+    }
+
     //data
     const {movie, isLoading} = useSelector(state => state.detail)
     console.log(movie)
     return(
         <>
         {!isLoading && (
-
-        
-        <CardShadow>
-            <Detail>
-                <div className="presentation">
-                    <div className="titre">
-                        <h1>{movie.data.title}</h1>
-                        <h4>{movie.data.year}</h4>
+            <CardShadow className="shadow" onClick={exitDetailHandler}>
+                <Detail>
+                    <div className="presentation">
+                        <div className="titre">
+                            <h1>{movie.data.title}</h1>
+                            <h4>{movie.data.year}</h4>
+                        </div>
+                        <img src={movie.data.image} alt={movie.name} />    
                     </div>
-                    <img src={movie.data.image} alt={movie.name} />    
-                </div>
-                <h3>Directed by {movie.data.directors}</h3>
-                
-                <p>Description : {movie.data.plot}</p>
-                <p className="actors">Actors : 
-                    <span> {movie.data.stars}</span>
-                </p>
-                <h3>Genres : {movie.data.genres}</h3>
-                <p>{movie.data.runtimeStr}</p>
-            </Detail>
-        </CardShadow>
+                    <h3>Directed by {movie.data.directors}</h3>
+                    
+                    <p>Description : <br /> {movie.data.plot}</p>
+                    <p className="actors">Actors : 
+                        <span> {movie.data.stars}</span>
+                    </p>
+                    <h3>Genres : {movie.data.genres}</h3>
+                    <p>{movie.data.runtimeStr}</p>
+                </Detail>
+            </CardShadow>
         )}
         </>
     )

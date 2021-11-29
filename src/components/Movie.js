@@ -11,21 +11,25 @@ const Movie = ({title,image,released,id}) => {
         document.body.style.overflow = 'hidden'
         dispatch(loadDetail(id))
     }
+    
 
     return(
-        <StyledMovie onClick={loadDetailHandler}>
-            <Link to={`/movie/${id}`}>
-                <img src={image} alt={title}/>
+        <Link to={`/movie/${id}`} style={{textDecoration: 'none'}}>
+            <StyledMovie onClick={loadDetailHandler}>
                 
-                <h3>{title}</h3>
-                <p>{released}</p>
-            </Link>
-        </StyledMovie>
+                    <img src={image} alt={title}/>
+                    
+                    
+                    <h3>{title.slice(0,17)}</h3>
+                    <p>{released}</p>
+                
+            </StyledMovie>
+        </Link>
+        
     )
 }
 
 const StyledMovie = styled.div`
-    appearance: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,13 +54,15 @@ const StyledMovie = styled.div`
     h3{
         text-align:center;
         margin: 5px 0;
-        color: white;
+        color: #c7ecee;
         text-decoration: none;
+        appearance: none;
     }
     p{
         font-family: 'Raleway', sans-serif;
         color: white;
         text-decoration: none;
+        appearance: none;
     }
     
 `
