@@ -11,6 +11,8 @@ const Movie = ({title,image,released,id}) => {
         document.body.style.overflow = 'hidden'
         dispatch(loadDetail(id))
     }
+
+    
     
 
     return(
@@ -20,7 +22,7 @@ const Movie = ({title,image,released,id}) => {
                     <img src={image} alt={title}/>
                     
                     
-                    <h3>{title.slice(0,17)}</h3>
+                    <h3>{title.slice(0,27)}</h3>
                     <p>{released}</p>
                 
             </StyledMovie>
