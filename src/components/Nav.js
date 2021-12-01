@@ -14,10 +14,13 @@ const Nav = () => {
         dispatch(fetchSearch(textInput))
         setTextInput("")
     }
+    const clearSearch = () => {
+        dispatch({type: "CLEAR_SEARCH"})
+    }
 
     return(
         <StyledNav>
-            <div className='logo'>What are we watching tonight</div>
+            <div className='logo' onClick={clearSearch}>What are we watching tonight</div>
             <form className="search">
                 <input value={textInput} onChange={inputHandler} type="text" placeholder="search for a movie"/>
                 <button onClick={submitSearch} type="submit">Go</button>
