@@ -1,6 +1,7 @@
 const initState = {
     popular: [],
-    popularTv: []
+    popularTv: [],
+    searched: []
 }
 
 const moviesReducer = (state=initState, action) => {
@@ -10,6 +11,11 @@ const moviesReducer = (state=initState, action) => {
                 ...state,
                 popular: action.payload.popular,
                 popularTv: action.payload.popularTv
+            }
+        case "FETCH_SEARCHED":
+            return {
+                ...state,
+                searched: action.payload.searched
             }
         default:
             return {...state}

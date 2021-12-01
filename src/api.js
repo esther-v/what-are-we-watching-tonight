@@ -12,4 +12,6 @@ export const popularMoviesURL = () => `${base_url}${popular_movies}`
 export const popularTvshowsURL = () => `${base_url}${popular_tvshows}`
 //Movie details
 export const movieDetailsURL = (movie_id) => `${base_url}Title/${apiKey}/${movie_id}`
+//Search movie
+export const searchMovieURL = (movie_name) => `${base_url}SearchTitle/${apiKey}/${movie_name}` 
  

@@ -1,12 +1,26 @@
+import { useState } from "react"
 import styled from "styled-components"
+import { fetchSearch } from "../actions/moviesActions"
+import { useDispatch } from "react-redux"
 
 const Nav = () => {
+    const dispatch = useDispatch()
+    const [textInput, setTextInput] = useState("")
+    const inputHandler = (e) => {
+        setTextInput(e.target.value)
+    }
+    const submitSearch = (e) => {
+        e.preventDefault()
+        dispatch(fetchSearch(textInput))
+        setTextInput("")
+    }
+
     return(
         <StyledNav>
             <div className='logo'>What are we watching tonight</div>
             <form className="search">
-                <input type="text" placeholder="search for a movie"/>
-                <button type="submit">Go</button>
+                <input value={textInput} onChange={inputHandler} type="text" placeholder="search for a movie"/>
+                <button onClick={submitSearch} type="submit">Go</button>
             </form>
         </StyledNav>
     )
@@ -24,7 +38,8 @@ const StyledNav = styled.nav`
     .logo{
         font-size: 30px;
         color: white;
-        transform : rotate(-3deg)
+        transform : rotate(-3deg);
+        cursor: pointer;
     }
     form{
         margin-top: 1rem;
