@@ -16,7 +16,6 @@ const MovieDetail = () => {
 
     //data
     const {movie, isLoading} = useSelector(state => state.detail)
-    console.log(movie)
     return(
         <>
         {!isLoading && (
@@ -31,7 +30,7 @@ const MovieDetail = () => {
                     </div>
                     <h3>Directed by {movie.data.directors}</h3>
                     
-                    <p>Description : <br /> {movie.data.plot}</p>
+                    <p className="description">Description : <br /> {movie.data.plot}</p>
                     <p className="actors">Actors : 
                         <span> {movie.data.stars}</span>
                     </p>
@@ -89,6 +88,9 @@ const Detail = styled.div`
         text-align: center;
         margin-top: 20px;
         font-size: 25px;
+    }
+    .description{
+        font-style: italic;
     }
 `
 

@@ -57,14 +57,13 @@ const StyledMovie = styled.div`
         text-align:center;
         margin: 5px 0;
         color: #c7ecee;
-        text-decoration: none;
-        appearance: none;
+        font-weight: 400;
+        
     }
     p{
         font-family: 'Raleway', sans-serif;
         color: white;
-        text-decoration: none;
-        appearance: none;
+        
     }
     
 `

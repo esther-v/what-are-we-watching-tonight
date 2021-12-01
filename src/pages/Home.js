@@ -12,16 +12,14 @@ import { useLocation } from 'react-router-dom'
 const Home = () => {
     //get current location
     const location = useLocation()
-    console.log(location)
     const pathId = location.pathname.split("/")[2]
-    console.log(pathId)
 
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(loadMovies())
     }, [dispatch])
     //get data back
-    const {popular, popularTv} =  useSelector(state => state.movies)
+    const {popular, popularTv, searched} =  useSelector(state => state.movies)
     //filter the 20 first movies
     const popularMovies = popular.filter((movie) => {
         if(movie.rank < 21) {
@@ -44,7 +42,25 @@ const Home = () => {
     return(
         <MovieList>
 
+
             {pathId && <MovieDetail/>}
+
+            {searched.length ? (
+                <div className="searched">
+                    <h2>Search results :</h2>
+                    <Movies>
+                        {searched.map((result) => (
+                            <Movie
+                            title={result.title}
+                            key={result.id}
+                            id={result.id}
+                            image={result.image}
+                            released={result.description}
+                            />
+                        ))}
+                    </Movies>
+                </div>
+            ) : ''}
 
             <h2>Popular Movies <span>Top 20</span></h2>
             <Movies>
