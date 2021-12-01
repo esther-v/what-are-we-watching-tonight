@@ -30,8 +30,8 @@ const MovieDetail = () => {
                     </div>
                     <h3>Directed by {movie.data.directors}</h3>
                     
-                    <p className="description">Description : <br /> {movie.data.plot}</p>
-                    <p className="actors">Actors : 
+                    <p className="description">{movie.data.plot}</p>
+                    <p className="actors">With 
                         <span> {movie.data.stars}</span>
                     </p>
                     <h3>Genres : {movie.data.genres}</h3>
