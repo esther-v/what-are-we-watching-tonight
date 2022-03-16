@@ -21,8 +21,10 @@ const Movie = ({title,image,released,id}) => {
                 
                     <img src={image} alt={title}/>
                     
-                    
-                    <h3>{title.slice(0,27)}</h3>
+                    {title.length > 20 ? (
+                        <h3>{title.slice(0, 20)+"..."}</h3>
+                    ) : <h3>{title}</h3>}
+                   
                     <p>{released}</p>
                 
             </StyledMovie>
